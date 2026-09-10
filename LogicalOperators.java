@@ -14,7 +14,8 @@ public class LogicalOperators {
             } else {
                 System.out.println("\nNot quite. Fix the FAILed rules and try again!\n");
             }
+
+    scanner.close();
         }
-            scanner.close();
   }
-}
+
