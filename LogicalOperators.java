@@ -8,7 +8,20 @@ public class LogicalOperators {
         System.out.println("=========================================");
         System.out.println("Your password must satisfy ALL 10 rules.\n");
     
-  while (!allRulesPassed) {}
+  while (!allRulesPassed) {
+    // remove this if you don't like it
+    attemptRule1 = 0;
+    while (attemptRule1 == 0){
+    System.out.println ("Enter password");
+    String lenghtPassword = scan.nextLine();
+    if (lenghtPassword.length () >=8) { 
+    System.out.println ("Rule 1: Passed ");
+    attemptRule1++;
+    }
+    else { System.out.println ("Password is too short, try again");
+         }
+  }
+  }
     if (allRulesPassed) {
                 System.out.println("\nAll 10 rules satisfied! You win the Password Game.");
             } else {
