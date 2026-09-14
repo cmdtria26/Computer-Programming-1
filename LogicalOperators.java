@@ -10,10 +10,10 @@ public class LogicalOperators {
     
   while (!allRulesPassed) {
     // remove this if you don't like it
-    attemptRule1 = 0;
+    int attemptRule1 = 0;
     while (attemptRule1 == 0){
     System.out.println ("Enter password");
-    String lenghtPassword = scan.nextLine();
+    String lenghtPassword = scanner.nextLine();
     if (lenghtPassword.length () >=8) { 
     System.out.println ("Rule 1: Passed ");
     attemptRule1++;
