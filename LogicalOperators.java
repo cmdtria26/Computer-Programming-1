@@ -3,32 +3,38 @@ public class LogicalOperators {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
         boolean allRulesPassed = false;
+        boolean rule1= false , rule2 = false;
+        boolean rule12 = rule1 && rule2;
         System.out.println("=========================================");
         System.out.println("           THE PASSWORD GAME");
         System.out.println("=========================================");
         System.out.println("Your password must satisfy ALL 10 rules.\n");
     
   while (!allRulesPassed) {
-    // remove this if you don't like it
-    int attemptRule1 = 0;
-    while (attemptRule1 == 0){
-    System.out.println ("Enter password");
-    String lenghtPassword = scanner.nextLine();
-    if (lenghtPassword.length () >=8) { 
-    System.out.println ("Rule 1: Passed ");
-    attemptRule1++;
-    }
-    else { System.out.println ("Password is too short, try again");
-         }
-  }
-  }
-    if (allRulesPassed) {
-                System.out.println("\nAll 10 rules satisfied! You win the Password Game.");
-            } else {
-                System.out.println("\nNot quite. Fix the FAILed rules and try again!\n");
-            }
-
-    scanner.close();
+  	System.out.println ("Enter a password: ");
+  	String password = scanner.nextLine();
+  	
+  	while (!rule12){
+  	  	int passwordLength = password.length();
+  		if (passwordLength >= 8) { 
+  		rule1 = true;
+  		}
+  		else { System.out.println ("The password is too short, please try again");
+  		break;
+  		}
+        	if (passwordLength >= 30) { System.out.println ("The password is too long, please try again");
+        	break;
+        	}
+        	else {
+        	rule2 = true;
+        	}
+        	rule12 = rule1 && rule2;
+        	allRulesPassed = rule12;
+        if (allRulesPassed == true) { System.out.println ("We have a winner, unfortunately");
+        break;        
         }
+       }
   }
-
+  scanner.close();
+  }
+}
