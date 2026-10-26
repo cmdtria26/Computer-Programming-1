@@ -1,0 +1,6 @@
+/**
+ * Label
+ */
+public class Label {
+
+}
